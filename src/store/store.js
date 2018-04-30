@@ -90,9 +90,33 @@ export const store = new Vuex.Store({
           state.opacity = payload.opacity
           state.saturate = payload.saturate            
           state.sepia = payload.sepia
+        },
+        changeRed(state,payload){
+            state.red = payload;
+        },
+        changeBlue(state,payload){
+            state.blue = payload;
+        },
+        changeGreen(state,payload){
+            state.green = payload;
+        },
+        changeColorOpacity(state,payload){
+            state.colorOpacity = payload;
         }
     },
     actions:{
+        changeRed(context, payload){
+            context.commit("changeRed", payload);
+        },
+        changeBlue(context, payload){
+            context.commit("changeBlue", payload);
+        },
+        changeGreen(context, payload){
+            context.commit("changeGreen", payload);
+        },
+        changeColorOpacity(context, payload){
+            context.commit("changeColorOpacity", payload);
+        },
         changeContrast(context, payload){
             context.commit("changeContrast", payload);
         },

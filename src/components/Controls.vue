@@ -80,6 +80,42 @@
             <range-slider
             min="0" max="100" :value="sepia" @input="changeSepia"
             ></range-slider>
+     </div> 
+     <div class="slider">
+         <div class="name-value">
+             <div class="name">Red</div>
+             <div class="value">{{red}}</div>
+         </div>
+            <range-slider
+            min="0" max="255" :value="red" @input="changeRed"
+            ></range-slider>
+     </div> 
+     <div class="slider">
+         <div class="name-value">
+             <div class="name">Green</div>
+             <div class="value">{{green}}</div>
+         </div>
+            <range-slider
+            min="0" max="255" :value="green" @input="changeGreen"
+            ></range-slider>
+     </div> 
+     <div class="slider">
+         <div class="name-value">
+             <div class="name">Blue</div>
+             <div class="value">{{blue}}</div>
+         </div>
+            <range-slider
+            min="0" max="255" :value="blue" @input="changeBlue"
+            ></range-slider>
+     </div> 
+     <div class="slider">
+         <div class="name-value">
+             <div class="name">Color opacity</div>
+             <div class="value">{{colorOpacity}}%</div>
+         </div>
+            <range-slider
+            min="0" max="10" :value="colorOpacity" @input="changeColorOpacity"
+            ></range-slider>
      </div>     
  </div>
 </template>
@@ -115,9 +151,33 @@ export default {
     },
     sepia() {
       return this.$store.state.sepia;
+    },
+    red() {
+      return this.$store.state.red;
+    },
+    green() {
+      return this.$store.state.green;
+    },
+    blue() {
+      return this.$store.state.blue;
+    },
+    colorOpacity() {
+      return this.$store.state.colorOpacity;
     }
   },
   methods: {
+    changeRed(value) {
+      this.$store.dispatch("changeRed", value);
+    },
+    changeGreen(value) {
+        this.$store.dispatch("changeGreen", value);
+    },
+    changeBlue(value) {
+        this.$store.dispatch("changeBlue", value);
+    },
+    changeColorOpacity(value) {
+        this.$store.dispatch("changeColorOpacity", value);
+    },
     changeContrast(value) {
       this.$store.dispatch("changeContrast", value);
     },
@@ -153,9 +213,8 @@ export default {
 </script>
 
 <style lang="scss">
-
 $color-green: #11c966;
-$color-dark-grey:#1c1e22;
+$color-dark-grey: #1c1e22;
 $color-medium-grey: #35373c;
 $color-light-grey: #7e8792;
 
@@ -177,15 +236,14 @@ $knob-shadow: 1px 1px rgba(0, 0, 0, 0.2);
   padding: 0 20px;
   align-content: space-around;
 }
-.name-value{
-    color:$color-light-grey;
-    display:flex;
-    justify-content: space-between;
-    font-size: 14px;
+.name-value {
+  color: $color-light-grey;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
 }
 
-.range-slider{
-    padding: 0;
+.range-slider {
+  padding: 0;
 }
-
 </style>
