@@ -9,7 +9,11 @@ export default {
             hueRotate: 0, 
             opacity: 100, 
             saturate: 100, 
-            sepia: 0 
+            sepia: 0,
+            red: 255,
+            green:255,
+            blue:255,
+            colorOpacity:0
         },
         "1977": {
             contrast: 110, 

@@ -15,9 +15,11 @@ export const store = new Vuex.Store({
         saturate:100, //100 default 0 min 200 max
         sepia: 0, //0 default 0 min 100 max
         red: 255,
-        green:0,
-        blue:0,
-        colorOpacity:5
+        green:255,
+        blue:255,
+        colorOpacity:0, //0 default
+        mode: "overlay",
+        menu: "app-filter-controls"
     },
     getters:{
         getContrast(state){
@@ -80,7 +82,6 @@ export const store = new Vuex.Store({
             state.sepia = payload;
         },
         changePreset(state, payload){
-            console.log(payload);
           state.contrast = payload.contrast
           state.brightness = payload.brightness
           state.grayscale = payload.grayscale
@@ -90,6 +91,10 @@ export const store = new Vuex.Store({
           state.opacity = payload.opacity
           state.saturate = payload.saturate            
           state.sepia = payload.sepia
+          state.red = payload.red
+          state.blue = payload.blue
+          state.green = payload.green
+          state.colorOpacity = payload.colorOpacity
         },
         changeRed(state,payload){
             state.red = payload;
@@ -102,6 +107,12 @@ export const store = new Vuex.Store({
         },
         changeColorOpacity(state,payload){
             state.colorOpacity = payload;
+        },
+        changeMenu(state,payload){
+            state.menu  = payload;
+        },
+        changeMode(state,payload){
+            state.mode = payload;
         }
     },
     actions:{
@@ -146,6 +157,12 @@ export const store = new Vuex.Store({
         },
         changePreset(context,payload){
             context.commit("changePreset", payload);
+        },
+        changeMenu(context,payload){
+            context.commit("changeMenu", payload);
+        },
+        changeMode(context,payload){
+            context.commit("changeMode", payload);
         }
     }
 });

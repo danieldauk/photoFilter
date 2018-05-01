@@ -3,7 +3,7 @@
      <div 
      class="image-container">
      <div
-     :style="{background:computedBackground}"
+     :style="[{'mix-blend-mode': computedMode},{background:computedBackground}]"
      class="image-container-overlay"></div>
          <img 
      class="image"
@@ -17,6 +17,9 @@
 <script>
 export default {
   computed:{
+    computedMode(){
+        return this.$store.state.mode;
+    },
      computedBackground(){
         return this.$store.getters.getBackground;
      },
@@ -73,10 +76,12 @@ export default {
     .image{
         max-width: 100%;
         max-height: 100%;
+        display:block;
     }
     .image-container{
         position:relative;
-        width: 90%;
+        display: inline-block;
+        max-width: 90%;
     }
 
     .image-container-overlay {
@@ -87,8 +92,5 @@ export default {
         top: 0;
         left: 0;
         position: absolute;
-        pointer-events: none;
-        mix-blend-mode: overlay;
-        background: rgba(0, 0, 227, 1);
     }
 </style>

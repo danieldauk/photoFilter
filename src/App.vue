@@ -1,21 +1,41 @@
 <template>
  <div class="layout">
    <app-picture></app-picture>
-   <app-controls></app-controls>
-   <app-presets></app-presets>
+   <div class="menu-container">
+      <app-menu></app-menu>
+      <transition
+      mode="out-in"
+      name="menu"
+    >
+      <component :is="currentComponent"></component>
+    </transition>
+   
+   </div>
+   
+   <!--<app-presets></app-presets>-->
  </div>
 </template>
 
 <script>
 import Picture from "./components/Picture"
-import Controls from "./components/Controls"
+import filterControls from "./components/filterControls"
+import overlayControls from "./components/overlayControls"
+import Menu from "./components/menu"
 import Presets from "./components/Presets"
 
 export default {
+  computed:{
+    currentComponent(){
+      return this.$store.state.menu
+    }
+  },
   components:{
     appPicture: Picture,
-    appControls:Controls,
-    appPresets: Presets
+    appFilterControls: filterControls,
+    appOverlayControls: overlayControls,
+    appPresets: Presets,
+    appMenu: Menu
+
   }
 }
 </script>
@@ -35,8 +55,32 @@ body{
 
   .layout{
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 70% auto;
     background-color: $color-dark-grey;
     min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .menu-container{
+    display:grid;
+    grid-template-rows: 30px auto;
+    border-left: 1px solid $color-light-grey;
+  }
+
+  .menu-enter{
+    transform: translateX(130%);
+  }
+
+  .menu-enter-active{
+    transition: .5s;
+  }
+
+  .menu-leave{
+
+  }
+
+  .menu-leave-active{
+   transform: translateX(130%);
+    transition: .5s;
   }
 </style>

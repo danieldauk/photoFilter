@@ -1,122 +1,86 @@
 <template>
- <div class="controls">
+ <div class="filter-controls">
      <div class="slider">
-         <div class="name-value">
-             <div class="name">Contrast</div>
-             <div class="value">{{contrast}}%</div>
+         <div class="filter-name-value">
+             <div class="filter-name">Contrast</div>
+             <div class="filter-value">{{contrast}}%</div>
          </div>
          <range-slider
             min="0" max="200" :value="contrast" @input="changeContrast"
         ></range-slider>
      </div>
      <div class="slider">
-         <div class="name-value">
-             <div class="name">Brightness</div>
-             <div class="value">{{brightness}}%</div>
+         <div class="filter-name-value">
+             <div class="filter-name">Brightness</div>
+             <div class="filter-value">{{brightness}}%</div>
          </div>
           <range-slider
             min="0" max="200" :value="brightness" @input="changeBrightness"
             ></range-slider>
      </div>
      <div class="slider">
-         <div class="name-value">
-             <div class="name">Grayscale</div>
-             <div class="value">{{grayscale}}%</div>
+         <div class="filter-name-value">
+             <div class="filter-name">Grayscale</div>
+             <div class="filter-value">{{grayscale}}%</div>
          </div>
             <range-slider
             min="0" max="100" :value="grayscale" @input="changeGrayscale"
             ></range-slider> 
      </div>
      <div class="slider">
-         <div class="name-value">
-             <div class="name">Invert</div>
-             <div class="value">{{invert}}%</div>
+         <div class="filter-name-value">
+             <div class="filter-name">Invert</div>
+             <div class="filter-value">{{invert}}%</div>
          </div>
             <range-slider
             min="0" max="100" :value="invert" @input="changeInvert"
             ></range-slider>
      </div>
      <div class="slider">
-         <div class="name-value">
-             <div class="name">Blur</div>
-             <div class="value">{{blur}}px</div>
+         <div class="filter-name-value">
+             <div class="filter-name">Blur</div>
+             <div class="filter-value">{{blur}}px</div>
          </div>
             <range-slider
             min="0" max="100" :value="blur" @input="changeBlur"
             ></range-slider>
      </div>
      <div class="slider">
-         <div class="name-value">
-             <div class="name">Hue Rotate</div>
-             <div class="value">{{hueRotate}}&deg;</div>
+         <div class="filter-name-value">
+             <div class="filter-name">Hue Rotate</div>
+             <div class="filter-value">{{hueRotate}}&deg;</div>
          </div>
             <range-slider
             min="0" max="360" :value="hueRotate" @input="changeHueRotate"
             ></range-slider>
      </div>
      <div class="slider">
-         <div class="name-value">
-             <div class="name">Opacity</div>
-             <div class="value">{{opacity}}%</div>
+         <div class="filter-name-value">
+             <div class="filter-name">Opacity</div>
+             <div class="filter-value">{{opacity}}%</div>
          </div>
             <range-slider
             min="0" max="100" :value="opacity" @input="changeOpacity"
             ></range-slider>
      </div>
      <div class="slider">
-         <div class="name-value">
-             <div class="name">Saturate</div>
-             <div class="value">{{saturate}}%</div>
+         <div class="filter-name-value">
+             <div class="filter-name">Saturate</div>
+             <div class="filter-value">{{saturate}}%</div>
          </div>
             <range-slider
             min="0" max="200" :value="saturate" @input="changeSaturate"
             ></range-slider>
      </div>
      <div class="slider">
-         <div class="name-value">
-             <div class="name">Sepia</div>
-             <div class="value">{{sepia}}%</div>
+         <div class="filter-name-value">
+             <div class="filter-name">Sepia</div>
+             <div class="filter-value">{{sepia}}%</div>
          </div>
             <range-slider
             min="0" max="100" :value="sepia" @input="changeSepia"
             ></range-slider>
      </div> 
-     <div class="slider">
-         <div class="name-value">
-             <div class="name">Red</div>
-             <div class="value">{{red}}</div>
-         </div>
-            <range-slider
-            min="0" max="255" :value="red" @input="changeRed"
-            ></range-slider>
-     </div> 
-     <div class="slider">
-         <div class="name-value">
-             <div class="name">Green</div>
-             <div class="value">{{green}}</div>
-         </div>
-            <range-slider
-            min="0" max="255" :value="green" @input="changeGreen"
-            ></range-slider>
-     </div> 
-     <div class="slider">
-         <div class="name-value">
-             <div class="name">Blue</div>
-             <div class="value">{{blue}}</div>
-         </div>
-            <range-slider
-            min="0" max="255" :value="blue" @input="changeBlue"
-            ></range-slider>
-     </div> 
-     <div class="slider">
-         <div class="name-value">
-             <div class="name">Color opacity</div>
-             <div class="value">{{colorOpacity}}%</div>
-         </div>
-            <range-slider
-            min="0" max="10" :value="colorOpacity" @input="changeColorOpacity"
-            ></range-slider>
-     </div>     
  </div>
 </template>
 
@@ -151,33 +115,10 @@ export default {
     },
     sepia() {
       return this.$store.state.sepia;
-    },
-    red() {
-      return this.$store.state.red;
-    },
-    green() {
-      return this.$store.state.green;
-    },
-    blue() {
-      return this.$store.state.blue;
-    },
-    colorOpacity() {
-      return this.$store.state.colorOpacity;
     }
   },
   methods: {
-    changeRed(value) {
-      this.$store.dispatch("changeRed", value);
-    },
-    changeGreen(value) {
-        this.$store.dispatch("changeGreen", value);
-    },
-    changeBlue(value) {
-        this.$store.dispatch("changeBlue", value);
-    },
-    changeColorOpacity(value) {
-        this.$store.dispatch("changeColorOpacity", value);
-    },
+    
     changeContrast(value) {
       this.$store.dispatch("changeContrast", value);
     },
@@ -230,13 +171,14 @@ $knob-shadow: 1px 1px rgba(0, 0, 0, 0.2);
 
 @import "~vue-range-slider/dist/vue-range-slider.scss";
 
-.controls {
+.filter-controls {
   display: grid;
   grid-template-columns: auto;
   padding: 0 20px;
   align-content: space-around;
+
 }
-.name-value {
+.filter-name-value {
   color: $color-light-grey;
   display: flex;
   justify-content: space-between;
