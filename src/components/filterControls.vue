@@ -39,7 +39,7 @@
      <div class="slider">
          <div class="filter-name-value">
              <div class="filter-name">Blur</div>
-             <div class="filter-value">{{blur}}px</div>
+             <div class="filter-value">{{blur/10}}px</div>
          </div>
             <range-slider
             min="0" max="100" :value="blur" @input="changeBlur"
