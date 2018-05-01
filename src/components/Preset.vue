@@ -1,6 +1,7 @@
 
 <template>
  <div class="preset-container">
+     <div>{{preset.name}}</div>
      <div 
      class="preset-image-container">
      <div
@@ -9,7 +10,7 @@
          <img 
      class="preset-image"
      :style="{filter:allFilters}"
-     src="https://placeimg.com/800/480/any">
+     src="https://placeimg.com/2400/1600/any">
      </div>
      
  </div>
@@ -88,10 +89,19 @@ export default {
 </script>
 
 <style lang="scss">
+$color-green: #11c966;
+$color-dark-grey:#1c1e22;
+$color-medium-grey: #35373c;
+$color-light-grey: #7e8792;
+
 .preset-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  color: $color-light-grey;
+  font-weight: 300;
 }
 
 .preset-image {

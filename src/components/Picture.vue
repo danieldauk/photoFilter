@@ -8,7 +8,7 @@
          <img 
      class="image"
      :style="{filter:allFilters}"
-     src="https://placeimg.com/800/480/any">
+     src="https://placeimg.com/2400/1600/any">
      </div>
      
  </div>

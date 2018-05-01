@@ -33,11 +33,16 @@ export default {
 
 <style lang="scss">
     .preset-controls{
-        max-height: calc(100vh - 40px);
+        max-height: calc(100vh - 50px);
         overflow-y:auto;
         margin-top: 10px;
         display:grid;
         grid-gap: 10px;
+        padding-bottom: 10px;
+    }
+
+    app-preset:last-child{
+        margin-bottom: 10px;
     }
     
 </style>
