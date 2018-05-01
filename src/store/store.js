@@ -95,6 +95,7 @@ export const store = new Vuex.Store({
           state.blue = payload.blue
           state.green = payload.green
           state.colorOpacity = payload.colorOpacity
+          state.mode = payload.mode
         },
         changeRed(state,payload){
             state.red = payload;

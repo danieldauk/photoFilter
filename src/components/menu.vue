@@ -8,6 +8,11 @@
       :class="overlayButton"
       @click="changeMenu('app-overlay-controls')"
       >Overlay</button>
+      <button
+      :class="presetsButton"
+        @click="changeMenu('app-presets-controls')"
+        >Presets
+        </button>
   </div>
 </template>
 
@@ -16,7 +21,8 @@ export default {
     data(){
         return{
             filterButton:{'active-menu':true},
-            overlayButton:{'active-menu':false}
+            overlayButton:{'active-menu':false},
+            presetsButton:{'active-menu':false}
         }
     },
   methods: {
@@ -34,9 +40,15 @@ export default {
           if(this.activeMenu==="app-filter-controls"){
               this.filterButton = {'active-menu': true}
               this.overlayButton = {'active-menu': false}
-          } else{
+              this.presetsButton = {'active-menu': false}
+          } else if(this.activeMenu==="app-overlay-controls"){
               this.filterButton = {'active-menu': false}
               this.overlayButton = {'active-menu': true}
+              this.presetsButton = {'active-menu': false}
+          } else{
+              this.filterButton = {'active-menu': false}
+              this.overlayButton = {'active-menu': false}
+              this.presetsButton = {'active-menu': true}
           }
       }
   }
@@ -54,7 +66,7 @@ $color-light-grey: #7e8792;
 }
 
 .active-menu{
-    background-color:rgba($color-light-grey, 0.1);
+    border-bottom: none;
 }
 
 button{

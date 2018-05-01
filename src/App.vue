@@ -20,8 +20,8 @@
 import Picture from "./components/Picture"
 import filterControls from "./components/filterControls"
 import overlayControls from "./components/overlayControls"
+import presetsControls from "./components/presetsControls"
 import Menu from "./components/menu"
-import Presets from "./components/Presets"
 
 export default {
   computed:{
@@ -33,7 +33,7 @@ export default {
     appPicture: Picture,
     appFilterControls: filterControls,
     appOverlayControls: overlayControls,
-    appPresets: Presets,
+    appPresetsControls: presetsControls,
     appMenu: Menu
 
   }
@@ -46,6 +46,20 @@ $color-green: #11c966;
 $color-dark-grey:#1c1e22;
 $color-medium-grey: #35373c;
 $color-light-grey: #7e8792;
+  ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: $color-medium-grey; 
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: $color-green; 
+
+    }
 
 body{
   margin:0;

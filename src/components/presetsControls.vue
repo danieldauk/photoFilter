@@ -1,0 +1,43 @@
+<template>
+    <div class="preset-controls">
+       <app-preset 
+       @click.native="changePreset(preset)"
+       v-for="(preset,index) in presets"
+       :key="index"
+       :preset="preset"
+       >
+       </app-preset>
+    </div>
+</template>
+
+<script>
+import Presets from "../presets.js";
+import appPreset from "./Preset.vue";
+
+export default {
+  data() {
+    return {
+      presets: Presets
+    };
+  },
+   methods: {
+    changePreset(preset) {
+        this.$store.dispatch("changePreset", preset);
+    }
+  },
+  components: {
+    appPreset
+  }
+};
+</script>
+
+<style lang="scss">
+    .preset-controls{
+        max-height: calc(100vh - 40px);
+        overflow-y:auto;
+        margin-top: 10px;
+        display:grid;
+        grid-gap: 10px;
+    }
+    
+</style>
