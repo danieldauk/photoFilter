@@ -20,7 +20,7 @@ export const store = new Vuex.Store({
         colorOpacity:0, //0 default
         mode: "overlay",
         menu: "app-filter-controls",
-        source:"https://placeimg.com/2400/1600/any",
+        source:"https://images.unsplash.com/photo-1510538955947-ea29cdeba88f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI0NzQ3fQ&s=5d53353308ea5d5dd9cec6941144f36a",
         spinnerMain: false,
         spinnerImages: false
     },

@@ -156,6 +156,7 @@ $knob-shadow: 1px 1px rgba(0, 0, 0, 0.2);
     height: 150px;
     width: 100%;
     margin: 0 auto;
+    border: 1px solid $color-light-grey;
 }
 
 .select-blend-mode{
