@@ -3,6 +3,7 @@
      <div 
      class="image-container">
      <div
+     v-show="!spinner"
      :style="[{'mix-blend-mode': computedMode},{background:computedBackground}]"
      class="image-container-overlay"></div>
          <img 
