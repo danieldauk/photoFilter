@@ -30,11 +30,16 @@
      <div class="slider">
          <div class="overlay-name-value">
              <div class="overlay-name">Color opacity</div>
-             <div class="overlay-value">{{colorOpacity}}%</div>
+             <div class="overlay-value">{{colorOpacity*10}}%</div>
          </div>
             <range-slider
             min="0" max="10" :value="colorOpacity" @input="changeColorOpacity"
             ></range-slider>
+     </div>
+     <div class="color-preview-container">
+         <div 
+         :style="{background:background}"
+         class="color-preview"></div>
      </div>
      <div class="select-container">
          <div class="selector-name">Mix blend mode</div>
@@ -76,7 +81,11 @@ export default {
     },
     colorOpacity() {
       return this.$store.state.colorOpacity;
+    },
+    background(){
+        return this.$store.getters.getBackground;
     }
+
   },
   methods: {
     changeRed(value) {
@@ -141,6 +150,12 @@ $knob-shadow: 1px 1px rgba(0, 0, 0, 0.2);
  font-size: 14px;
  margin-bottom: 2px;
 
+}
+
+.color-preview{
+    height: 150px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .select-blend-mode{

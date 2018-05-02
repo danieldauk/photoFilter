@@ -13,6 +13,11 @@
         @click="changeMenu('app-presets-controls')"
         >Presets
         </button>
+        <button
+      :class="imagesButton"
+        @click="changeMenu('app-images-controls')"
+        >Images
+        </button>
   </div>
 </template>
 
@@ -22,7 +27,8 @@ export default {
         return{
             filterButton:{'active-menu':true},
             overlayButton:{'active-menu':false},
-            presetsButton:{'active-menu':false}
+            presetsButton:{'active-menu':false},
+            imagesButton:{'active-menu':false}
         }
     },
   methods: {
@@ -41,14 +47,22 @@ export default {
               this.filterButton = {'active-menu': true}
               this.overlayButton = {'active-menu': false}
               this.presetsButton = {'active-menu': false}
+              this.imagesButton = {'active-menu': false}
           } else if(this.activeMenu==="app-overlay-controls"){
               this.filterButton = {'active-menu': false}
               this.overlayButton = {'active-menu': true}
               this.presetsButton = {'active-menu': false}
-          } else{
+              this.imagesButton = {'active-menu': false}
+          } else if(this.activeMenu==="app-presets-controls"){
               this.filterButton = {'active-menu': false}
               this.overlayButton = {'active-menu': false}
               this.presetsButton = {'active-menu': true}
+              this.imagesButton = {'active-menu': false}
+          } else{
+              this.filterButton = {'active-menu': false}
+              this.overlayButton = {'active-menu': false}
+              this.presetsButton = {'active-menu': false}
+              this.imagesButton = {'active-menu': true}
           }
       }
   }
@@ -67,6 +81,9 @@ $color-light-grey: #7e8792;
 
 .active-menu{
     border-bottom: none;
+    &:hover{
+        background: none;
+    }
 }
 
 button{

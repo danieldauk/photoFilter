@@ -10,7 +10,7 @@
          <img 
      class="preset-image"
      :style="{filter:allFilters}"
-     src="https://placeimg.com/2400/1600/any">
+     :src="computedSource">
      </div>
      
  </div>
@@ -20,6 +20,9 @@
 export default {
   props: ["preset"],
   computed: {
+    computedSource(){
+        return this.$store.state.source;
+    },
     computedMode() {
       return this.preset.mode;
     },

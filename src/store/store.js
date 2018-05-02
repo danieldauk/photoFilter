@@ -19,7 +19,10 @@ export const store = new Vuex.Store({
         blue:255,
         colorOpacity:0, //0 default
         mode: "overlay",
-        menu: "app-filter-controls"
+        menu: "app-filter-controls",
+        source:"https://placeimg.com/2400/1600/any",
+        spinnerMain: false,
+        spinnerImages: false
     },
     getters:{
         getContrast(state){
@@ -114,6 +117,12 @@ export const store = new Vuex.Store({
         },
         changeMode(state,payload){
             state.mode = payload;
+        },
+        changeSource(state,payload){
+            state.source = payload;
+        },
+        changeSpinner(state,payload){
+            state.spinnerMain = payload;
         }
     },
     actions:{
@@ -164,6 +173,12 @@ export const store = new Vuex.Store({
         },
         changeMode(context,payload){
             context.commit("changeMode", payload);
+        },
+        changeSource(context,payload){
+            context.commit("changeSource", payload);
+        },
+        changeSpinner(context,payload){
+            context.commit("changeSpinner", payload)
         }
     }
 });

@@ -7,7 +7,10 @@
       mode="out-in"
       name="menu"
     >
+    <keep-alive>
       <component :is="currentComponent"></component>
+    </keep-alive>
+      
     </transition>
    
    </div>
@@ -21,6 +24,7 @@ import Picture from "./components/Picture"
 import filterControls from "./components/filterControls"
 import overlayControls from "./components/overlayControls"
 import presetsControls from "./components/presetsControls"
+import imagesControls from "./components/imagesControls"
 import Menu from "./components/menu"
 
 export default {
@@ -34,6 +38,7 @@ export default {
     appFilterControls: filterControls,
     appOverlayControls: overlayControls,
     appPresetsControls: presetsControls,
+    appImagesControls: imagesControls,
     appMenu: Menu
 
   }
@@ -69,7 +74,7 @@ body{
 
   .layout{
     display: grid;
-    grid-template-columns: 70% auto;
+    grid-template-columns: auto 30vw;
     background-color: $color-dark-grey;
     min-height: 100vh;
     overflow: hidden;
