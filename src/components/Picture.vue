@@ -88,6 +88,9 @@ export default {
     showSpinner() {
       this.$store.dispatch("changeSpinner", false);
     }
+  },
+  mounted(){
+       this.$store.dispatch("changeSpinner", true)
   }
 };
 </script>
