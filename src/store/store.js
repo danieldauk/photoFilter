@@ -123,6 +123,9 @@ export const store = new Vuex.Store({
         },
         changeSpinner(state,payload){
             state.spinnerMain = payload;
+        },
+        changeSpinnerImages(state,payload){
+            state.spinnerImages = payload;
         }
     },
     actions:{
@@ -179,6 +182,9 @@ export const store = new Vuex.Store({
         },
         changeSpinner(context,payload){
             context.commit("changeSpinner", payload)
+        },
+        changeSpinnerImages(context,payload){
+            context.commit("changeSpinnerImages", payload)
         }
     }
 });
