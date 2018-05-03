@@ -93,7 +93,7 @@ button{
     padding: 5px 20px;
     color: $color-light-grey;
     cursor: pointer;
-    flex: 1;
+    flex-grow: 1;
     outline: none;
     border-left:none;
 
@@ -102,5 +102,14 @@ button{
     }
 }
 
-
+@media (max-width: 1080px) {
+    button{
+        padding: 0;
+        height:40px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
 </style>

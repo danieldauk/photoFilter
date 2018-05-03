@@ -106,6 +106,7 @@ body{
   @media(max-width: 1080px){
     .layout{
       grid-template-columns: auto;
+      border-left: none;
     }
   }
 </style>

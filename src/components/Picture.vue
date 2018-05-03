@@ -160,4 +160,10 @@ $color-green: #11c966;
     opacity: 0;
   }
 }
+
+@media (max-width: 1080px) {
+.image-container {
+  margin: 20px 0;
+}
+}
 </style>

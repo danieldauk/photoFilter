@@ -106,14 +106,21 @@ $color-light-grey: #7e8792;
 }
 
 @media(max-width: 1080px){
-    .images-controls{
+    .images-controls-container{
       max-height:auto;
+      min-height: 60vh;
+
     }
 
     .images-container{
       justify-content: center;
       grid-template-columns: repeat(6,auto);
       margin:20px 0;
+    }
+
+    .load-images-button{
+      margin: 20px auto;
+      padding: 0px 10px;
     }
   }
 

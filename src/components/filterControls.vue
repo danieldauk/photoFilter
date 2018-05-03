@@ -193,6 +193,7 @@ $knob-shadow: 1px 1px rgba(0, 0, 0, 0.2);
     grid-template-columns: 50%;
     grid-auto-rows: 50px;
     margin-top: 20px;
+
   }
 
 }
