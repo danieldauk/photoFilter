@@ -192,7 +192,7 @@ $knob-shadow: 1px 1px rgba(0, 0, 0, 0.2);
     justify-content: center;
     grid-template-columns: 50%;
     grid-auto-rows: 50px;
-    margin-top: 20px;
+    margin-top: 40px;
 
   }
 

@@ -113,7 +113,7 @@ button{
         display:flex;
         justify-content: center;
         align-items: center;
-        box-sizing: content-box;
+        width: 25%;
     }
     
 }

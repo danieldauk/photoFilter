@@ -172,7 +172,7 @@ $knob-shadow: 1px 1px rgba(0, 0, 0, 0.2);
       justify-content: center;
       grid-template-columns: 50%;
       grid-template-rows: repeat(4,50px) auto 50px;
-      margin-top:20px;
+      margin-top:40px;
     }
 
     .select-container{

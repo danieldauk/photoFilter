@@ -50,7 +50,7 @@ app-preset:last-child {
     max-height: auto;
     justify-content: center;
     grid-template-columns: 40% 40%;
-    margin-top: 20px;
+    margin-top: 40px;
   }
 }
 
