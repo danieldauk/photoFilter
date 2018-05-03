@@ -100,6 +100,10 @@ button{
     &:hover{
         background-color:rgba($color-light-grey, 0.1);
     }
+
+    &:first-child{
+        border-left:1px solid $color-light-grey;
+    }
 }
 
 @media (max-width: 1080px) {
