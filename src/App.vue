@@ -102,4 +102,10 @@ body{
    transform: translateX(130%);
     transition: .5s;
   }
+
+  @media(max-width: 1080px){
+    .layout{
+      grid-template-columns: auto;
+    }
+  }
 </style>

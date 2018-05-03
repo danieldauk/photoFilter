@@ -20,9 +20,9 @@ export default {
       presets: Presets
     };
   },
-   methods: {
+  methods: {
     changePreset(preset) {
-        this.$store.dispatch("changePreset", preset);
+      this.$store.dispatch("changePreset", preset);
     }
   },
   components: {
@@ -32,17 +32,33 @@ export default {
 </script>
 
 <style lang="scss">
-    .preset-controls{
-        max-height: calc(100vh - 50px);
-        overflow-y:auto;
-        margin-top: 10px;
-        display:grid;
-        grid-gap: 10px;
-        padding-bottom: 10px;
-    }
+.preset-controls {
+  max-height: calc(100vh - 50px);
+  overflow-y: auto;
+  margin-top: 10px;
+  display: grid;
+  grid-gap: 10px;
+  padding-bottom: 10px;
+}
 
-    app-preset:last-child{
-        margin-bottom: 10px;
-    }
-    
+app-preset:last-child {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1080px) {
+  .preset-controls {
+    max-height: auto;
+    justify-content: center;
+    grid-template-columns: 40% 40%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .preset-controls {
+    grid-template-columns: 70%;
+  }
+}
+
+
 </style>

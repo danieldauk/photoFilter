@@ -166,4 +166,30 @@ $knob-shadow: 1px 1px rgba(0, 0, 0, 0.2);
     height: 30px;
      outline: none;
 }
+
+@media(max-width: 1080px){
+    .overlay-controls{
+      justify-content: center;
+      grid-template-columns: 50%;
+      grid-template-rows: repeat(4,50px) auto 50px;
+      margin-top:20px;
+    }
+
+    .select-container{
+        margin: 20px 0;
+    }
+  }
+
+  @media(max-width:700px) {
+  .overlay-controls {
+    grid-template-columns: 70%;
+  }
+
+}
+
+@media(max-width:400px) {
+  .overlay-controls {
+    grid-template-columns: 80%;
+  }
+}
 </style>

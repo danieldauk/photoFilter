@@ -118,7 +118,6 @@ export default {
     }
   },
   methods: {
-    
     changeContrast(value) {
       this.$store.dispatch("changeContrast", value);
     },
@@ -176,7 +175,6 @@ $knob-shadow: 1px 1px rgba(0, 0, 0, 0.2);
   grid-template-columns: auto;
   padding: 0 20px;
   align-content: space-around;
-
 }
 .filter-name-value {
   color: $color-light-grey;
@@ -188,4 +186,26 @@ $knob-shadow: 1px 1px rgba(0, 0, 0, 0.2);
 .range-slider {
   padding: 0;
 }
+
+@media(max-width: 1080px) {
+  .filter-controls {
+    justify-content: center;
+    grid-template-columns: 50%;
+    grid-auto-rows: 50px;
+    margin-top: 20px;
+  }
+
+}
+@media(max-width:700px) {
+  .filter-controls {
+    grid-template-columns: 70%;
+  }
+}
+
+@media(max-width:400px) {
+  .filter-controls {
+    grid-template-columns: 80%;
+  }
+}
+
 </style>
